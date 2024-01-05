@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherNook</title>
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+           
+            background-size: cover;
+           
+        }
+
+
+        .gif-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+
+        .gif-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+
+
+
+
+        .weather-box {
+            width: 80vw;
+            min-width: 80px;
+            height: 30vh;
+            min-height: 40px;
+           
+            border-radius: 30px;
+            border-color: rgba(0, 0, 0, 0.1);
+            border: 1px;
+            border-style: hidden outset outset hidden;
+           
+             
+            background: rgba(255, 255, 255, 0.13);
+           
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+           
+           
+
+
+           
+       
+        }
+
+
+        .weather-text {
+            color: #ffffff;
+            font-family: 'Jost', sans-serif;
+            font-size: 35px;
+            font-style: normal;
+            line-height: normal;
+           
+        }
+
+
+        .divBg {
+            background-image: url("rain png rawr.gif");
+            background: linear-gradient(190deg,
+            #56AEFF 16.39%,
+            rgba(124, 192, 255, 0.70) 30.77%,
+            rgba(187, 222, 255, 0.71) 56.14%,
+            rgba(93, 177, 255, 0.41) 95.83%,
+            rgba(86, 174, 255, 0.00) 100%);
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0px;
+       
+       
+    }
+    </style>
+</head>
+<body>
+    <div class="divBg">
+        <div class="gif-container">
+            <img src="rain png rawr.gif" alt="Rain GIF">
+        </div>
+   
+        <div class="weather-box">
+            <table border="0px">
+                <tr>
+                    <td  class="weather-text"><svg height="100px" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M195 96.2307C195 96.8674 194.99 97.5017 194.969 98.1333C203.917 103.005 210 112.58 210 123.596C210 137.479 200.336 149.074 187.454 151.849L196.385 135.194C197.867 132.727 196.09 129.586 193.211 129.586H192.603H183.598C182.898 129.586 182.415 128.887 182.662 128.233L189.85 109.183L189.994 108.813C191.017 106.19 189.082 103.36 186.267 103.36H185.636H155.271H154.855C153.059 103.36 151.483 104.556 151.001 106.286L150.925 106.56L138.554 150.962L138.131 152.481L69 152.481C47.4609 152.481 30 134.784 30 112.954C30 91.1235 47.4609 73.4266 69 73.4266C75.4999 73.4266 81.6283 75.0382 87.0176 77.8886C94.5218 55.8284 115.185 39.9807 139.5 39.9807C170.152 39.9807 195 65.1647 195 96.2307Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M116.835 163.499C114.208 162.646 111.388 164.083 110.534 166.71L97.6144 206.473C96.7611 209.099 98.1984 211.92 100.825 212.773C103.451 213.626 106.272 212.189 107.125 209.563L120.045 169.8C120.898 167.174 119.461 164.353 116.835 163.499ZM96.7024 163.499C94.0762 162.646 91.2554 164.083 90.4021 166.71L73.3655 219.143C72.5121 221.769 73.9494 224.59 76.5757 225.443C79.2019 226.297 82.0227 224.859 82.876 222.233L99.9126 169.8C100.766 167.174 99.3287 164.353 96.7024 163.499ZM70.2699 166.71C71.1233 164.083 73.944 162.646 76.5703 163.499C79.1966 164.353 80.6338 167.174 79.7805 169.8L70.9776 196.892C70.1243 199.519 67.3035 200.956 64.6772 200.103C62.0509 199.249 60.6137 196.429 61.467 193.802L70.2699 166.71ZM136.966 163.499C134.339 162.646 131.519 164.083 130.665 166.71L121.862 193.802C121.009 196.429 122.446 199.249 125.073 200.103C127.699 200.956 130.52 199.519 131.373 196.892L140.176 169.8C141.029 167.174 139.592 164.353 136.966 163.499Z" fill="#B4F5F2"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M157.73 109.283C156.825 109.283 156.033 109.891 155.798 110.764L145.288 149.911C144.947 151.182 145.904 152.43 147.219 152.43H161.329C162.522 152.43 163.45 153.468 163.316 154.654L159.541 188.058C159.291 190.271 162.3 191.175 163.311 189.191L189.572 137.625C190.249 136.295 189.283 134.718 187.79 134.718H176.256C174.837 134.718 173.87 133.282 174.402 131.968L182.464 112.033C182.996 110.718 182.028 109.283 180.61 109.283H157.73Z" fill="#FFF686"/></svg></td>
+                    <td class="weather-text" style="font-size:75px;">32°</td>
+                </tr>
+                <tr>
+                    <td class="weather-text" colspan="2">San Jose Del Monte</td>
+                </tr>
+            </table>
+
+
+           
+        </div>
+
+
+        <div class="InfoMenu">
+
+
+        </div>
+    </div>
+   
+   
+
+
+   
+
+
+    <!-- Bootstrap JS and Popper.js (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
