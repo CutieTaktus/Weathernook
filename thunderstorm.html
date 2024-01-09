@@ -171,7 +171,7 @@ section{
                     
                 </tr>
                 <tr>
-                    <td class="weather-text" colspan="2">San Jose Del Monte</td>
+                    <td id="location-name" class="weather-text" colspan="2">San Jose Del Monte</td>
                 </tr>
             </table>         
         </div>
@@ -337,6 +337,54 @@ window.addEventListener('scroll', () => {
 
         const hiddenElements = document.querySelectorAll('.hidden');
         hiddenElements.forEach((el) => observer.observe(el));
+
+
+
+
+    // Replace 'YOUR_OPENCAGE_API_KEY' with your actual API key from OpenCage
+    const openCageApiKey = 'c50db7640d3f49e89e76e7effb65fe5d';
+
+    // Check if the browser supports the Geolocation API
+    if (navigator.geolocation) {
+        // Request the user's location
+        navigator.geolocation.getCurrentPosition(successCallback, fallbackToIPBasedLocation, { timeout: 10000 });
+    } else {
+        // Browser doesn't support Geolocation
+        fallbackToIPBasedLocation();
+    }
+
+    // Success callback function for Geolocation API
+    function successCallback(position) {
+        const latitude = position.coords.latitude.toFixed(2);
+        const longitude = position.coords.longitude.toFixed(2);
+
+        // Use OpenCage Geocoding API to get location information based on coordinates
+        fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${openCageApiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                const city = data.results[0].components.city;
+                console.log(`Current City: ${city}`);
+            })
+            .catch(error => {
+                console.log('Error fetching location:', error);
+                console.log('Unable to determine city.');
+            });
+    }
+
+    // Fallback to IP-based location
+    function fallbackToIPBasedLocation() {
+        // Use an IP geolocation service (e.g., IPinfo.io)
+        fetch('https://ipinfo.io/json')
+            .then(response => response.json())
+            .then(data => {
+                const city = data.city;
+                console.log(`IP-based City: ${city}`);
+            })
+            .catch(error => {
+                console.log('Error fetching IP-based location:', error);
+                console.log('Unable to determine city.');
+            });
+    }
     </script>
     
 
