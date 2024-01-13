@@ -348,9 +348,10 @@ window.addEventListener('scroll', () => {
         hiddenElements.forEach((el) => observer.observe(el));
 
 // Declare city as a global variable
+/*
 let city = '';
 console.log(city);
-const openCageApiKey = 'c50db7640d3f49e89e76e7effb65fe5d';
+const openCageApiKey = '53508de8c8aa43caa6cfaa09d8ed9240';
 
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(successCallback, fallbackToIPBasedLocation, { timeout: 10000 });
@@ -368,12 +369,52 @@ function successCallback(position) {
             city = data.results[0].components.city;
             // Call sendCityToBackend(city) after city is updated
             sendCityToBackend(city);
+            console.log(city);
+            console.log("Data from Opencage")
         })
         .catch(error => {
             console.log('Error fetching location:', error);
             console.log('Unable to determine city.');
         });
 }
+*/
+
+
+let city = '';
+console.log(city);
+const mapboxApiKey = 'pk.eyJ1IjoiY3V0aWVjYXQiLCJhIjoiY2xyYnk5ZmR0MHgwbTJrbGRkaTN1eXJ6ZSJ9.jhNjMxaAq939F-tuP34LqA';
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successCallback, fallbackToIPBasedLocation, { timeout: 10000 });
+} else {
+    fallbackToIPBasedLocation();
+}
+
+function successCallback(position) {
+    const latitude = position.coords.latitude.toFixed(2);
+    const longitude = position.coords.longitude.toFixed(2);
+
+    fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${longitude},${latitude}.json?access_token=${mapboxApiKey}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.features.length > 0) {
+                city = data.features[0].context.find(context => context.id.includes('place')).text;
+                // Call sendCityToBackend(city) after city is updated
+                sendCityToBackend(city);
+                console.log(city);
+                console.log("Data from Mapbox API")
+            } else {
+                console.log('Error fetching location:', data.message);
+                console.log('Unable to determine city.');
+            }
+        })
+        .catch(error => {
+            console.log('Error fetching location:', error);
+            console.log('Unable to determine city.');
+        });
+}
+
+
 
 function fallbackToIPBasedLocation() {
     fetch('https://ipinfo.io/json')
@@ -382,6 +423,7 @@ function fallbackToIPBasedLocation() {
             city = data.city;
             // Call sendCityToBackend(city) after city is updated
             sendCityToBackend(city);
+            console.log("Data from IP info")
         })
         .catch(error => {
             console.log('Error fetching IP-based location:', error);
