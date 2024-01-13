@@ -150,28 +150,39 @@ section{
         display: block;
         margin: 0 auto;
         }
+
+#location-name1 {
+    color: #ffffff;
+    font-size: 25px;
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    line-height: normal;
+    text-align: justify;  
+
+}
 </style>
 </head>
 
 <body>
     <div class="divBg">
         <div class="gif-container">
-            <img src="rain.gif" alt="Rain GIF">
+            <img src="rain.gif" id="RainGif" alt="Rain GIF">
         </div>
    
         <section class="hidden">
         <div class="weather-box">
             <table border="0px">
                 <tr>
-                    <td  class="weather-text"><svg height="125px" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M195 96.2307C195 96.8674 194.99 97.5017 194.969 98.1333C203.917 103.005 210 112.58 210 123.596C210 137.479 200.336 149.074 187.454 151.849L196.385 135.194C197.867 132.727 196.09 129.586 193.211 129.586H192.603H183.598C182.898 129.586 182.415 128.887 182.662 128.233L189.85 109.183L189.994 108.813C191.017 106.19 189.082 103.36 186.267 103.36H185.636H155.271H154.855C153.059 103.36 151.483 104.556 151.001 106.286L150.925 106.56L138.554 150.962L138.131 152.481L69 152.481C47.4609 152.481 30 134.784 30 112.954C30 91.1235 47.4609 73.4266 69 73.4266C75.4999 73.4266 81.6283 75.0382 87.0176 77.8886C94.5218 55.8284 115.185 39.9807 139.5 39.9807C170.152 39.9807 195 65.1647 195 96.2307Z" fill="white"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M116.835 163.499C114.208 162.646 111.388 164.083 110.534 166.71L97.6144 206.473C96.7611 209.099 98.1984 211.92 100.825 212.773C103.451 213.626 106.272 212.189 107.125 209.563L120.045 169.8C120.898 167.174 119.461 164.353 116.835 163.499ZM96.7024 163.499C94.0762 162.646 91.2554 164.083 90.4021 166.71L73.3655 219.143C72.5121 221.769 73.9494 224.59 76.5757 225.443C79.2019 226.297 82.0227 224.859 82.876 222.233L99.9126 169.8C100.766 167.174 99.3287 164.353 96.7024 163.499ZM70.2699 166.71C71.1233 164.083 73.944 162.646 76.5703 163.499C79.1966 164.353 80.6338 167.174 79.7805 169.8L70.9776 196.892C70.1243 199.519 67.3035 200.956 64.6772 200.103C62.0509 199.249 60.6137 196.429 61.467 193.802L70.2699 166.71ZM136.966 163.499C134.339 162.646 131.519 164.083 130.665 166.71L121.862 193.802C121.009 196.429 122.446 199.249 125.073 200.103C127.699 200.956 130.52 199.519 131.373 196.892L140.176 169.8C141.029 167.174 139.592 164.353 136.966 163.499Z" fill="#B4F5F2"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M157.73 109.283C156.825 109.283 156.033 109.891 155.798 110.764L145.288 149.911C144.947 151.182 145.904 152.43 147.219 152.43H161.329C162.522 152.43 163.45 153.468 163.316 154.654L159.541 188.058C159.291 190.271 162.3 191.175 163.311 189.191L189.572 137.625C190.249 136.295 189.283 134.718 187.79 134.718H176.256C174.837 134.718 173.87 133.282 174.402 131.968L182.464 112.033C182.996 110.718 182.028 109.283 180.61 109.283H157.73Z" fill="#FFF686"/></svg></td>
-                    <td class="weather-text" style="font-size: 75px;">32°</td>
+                    <td  class="weather-text">
+                        <object data="/static/thunderstorm_Icon.svg" type="image/svg+xml" height="125px" width="125px" id="weatherIcon1">
+                        <img src="fallback-image.png" alt="Fallback image">
+                      </object>
+                    </td>
+                    <td id="temp1" class="weather-text" style="font-size: 75px;">32°</td>
                     
                 </tr>
                 <tr>
-                    <td id="location-name" class="weather-text" colspan="2">San Jose Del Monte</td>
+                    <td id="location-name" class="weather-text" colspan="2">Location Error</td>
                 </tr>
             </table>         
         </div>
@@ -182,12 +193,14 @@ section{
     <div class="spacer"> </div>
     <table border="0px" >
         <tr>
-            <td class="weather-text" style="font-size: 50px; width: 200px;"><svg height="150px" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M195 96.2307C195 96.8674 194.99 97.5017 194.969 98.1333C203.917 103.005 210 112.58 210 123.596C210 137.479 200.336 149.074 187.454 151.849L196.385 135.194C197.867 132.727 196.09 129.586 193.211 129.586H192.603H183.598C182.898 129.586 182.415 128.887 182.662 128.233L189.85 109.183L189.994 108.813C191.017 106.19 189.082 103.36 186.267 103.36H185.636H155.271H154.855C153.059 103.36 151.483 104.556 151.001 106.286L150.925 106.56L138.554 150.962L138.131 152.481L69 152.481C47.4609 152.481 30 134.784 30 112.954C30 91.1235 47.4609 73.4266 69 73.4266C75.4999 73.4266 81.6283 75.0382 87.0176 77.8886C94.5218 55.8284 115.185 39.9807 139.5 39.9807C170.152 39.9807 195 65.1647 195 96.2307Z" fill="white"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M116.835 163.499C114.208 162.646 111.388 164.083 110.534 166.71L97.6144 206.473C96.7611 209.099 98.1984 211.92 100.825 212.773C103.451 213.626 106.272 212.189 107.125 209.563L120.045 169.8C120.898 167.174 119.461 164.353 116.835 163.499ZM96.7024 163.499C94.0762 162.646 91.2554 164.083 90.4021 166.71L73.3655 219.143C72.5121 221.769 73.9494 224.59 76.5757 225.443C79.2019 226.297 82.0227 224.859 82.876 222.233L99.9126 169.8C100.766 167.174 99.3287 164.353 96.7024 163.499ZM70.2699 166.71C71.1233 164.083 73.944 162.646 76.5703 163.499C79.1966 164.353 80.6338 167.174 79.7805 169.8L70.9776 196.892C70.1243 199.519 67.3035 200.956 64.6772 200.103C62.0509 199.249 60.6137 196.429 61.467 193.802L70.2699 166.71ZM136.966 163.499C134.339 162.646 131.519 164.083 130.665 166.71L121.862 193.802C121.009 196.429 122.446 199.249 125.073 200.103C127.699 200.956 130.52 199.519 131.373 196.892L140.176 169.8C141.029 167.174 139.592 164.353 136.966 163.499Z" fill="#B4F5F2"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M157.73 109.283C156.825 109.283 156.033 109.891 155.798 110.764L145.288 149.911C144.947 151.182 145.904 152.43 147.219 152.43H161.329C162.522 152.43 163.45 153.468 163.316 154.654L159.541 188.058C159.291 190.271 162.3 191.175 163.311 189.191L189.572 137.625C190.249 136.295 189.283 134.718 187.79 134.718H176.256C174.837 134.718 173.87 133.282 174.402 131.968L182.464 112.033C182.996 110.718 182.028 109.283 180.61 109.283H157.73Z" fill="#FFF686"/></svg></td>
-                <td class="weather-text" style="font-size: 50px; margin: 0; ">30°C<span style="opacity: 0;">&nbsp;</span><p style="font-size: 25px; margin: 0;">San Jose Del Monte</p></td>
-
+            <td class="weather-text" style="font-size: 50px; width: 200px;">
+                <object data="/static/thunderstorm_Icon.svg" type="image/svg+xml" height="125px" width="125px" id="weatherIcon2">
+                <img src="fallback-image.png" alt="Fallback image">
+                </object>
+            </td>
+                <td id="temp" class="weather-text" style="font-size: 50px; margin: 0; ">30°C</td>
+                <td id="location-name1" style="margin: 0; opacity: 1;">Location Error</td>
+                
 
         </tr>
         <tr>
@@ -264,24 +277,24 @@ section{
               <td><img src="static/sunset.png"></td>
             </tr>
             <tr>
-              <td>   6:45AM</td>
-              <td>   7:18PM</td>
+              <td id="sunriseTime">   6:45AM</td>
+              <td id="sunsetTime">   7:18PM</td>
             </tr>
             <tr>
                 <td><img src="static/lowTemp.png"></td>
                 <td><img src="static/highTemp.png"></td>
               </tr>
               <tr>
-                <td>  Min: 27°</td>
-                <td>  Max: 34°</td>
+                <td id="lowTemp">  Min: 27°</td>
+                <td id="highTemp">  Max: 34°</td>
               </tr>
               <tr>
                 <td><img src="static/wind.png"></td>
                 <td><img src="static/humid.png"></td>
               </tr>
               <tr>
-                <td>Wind: 20kph</td>
-                <td>Humid: 30%</td>
+                <td id="windSpeed">Wind: 20kph</td>
+                <td id="humidity">Humid: 30%</td>
               </tr>
     </table>
  
@@ -290,10 +303,6 @@ section{
 </section>
 
     
-
-
-
-
     <script>
         const observer = new IntersectionObserver((entries) => {
             let isArrowVisible = false;
@@ -338,53 +347,235 @@ window.addEventListener('scroll', () => {
         const hiddenElements = document.querySelectorAll('.hidden');
         hiddenElements.forEach((el) => observer.observe(el));
 
+// Function to update temperature in the DOM
+function updateTemperature(temperature) {
+    const temperatureElement = document.getElementById('temp');
+    const temperatureElement1 = document.getElementById('temp1');
 
-
-
-    // Replace 'YOUR_OPENCAGE_API_KEY' with your actual API key from OpenCage
-    const openCageApiKey = 'c50db7640d3f49e89e76e7effb65fe5d';
-
-    // Check if the browser supports the Geolocation API
-    if (navigator.geolocation) {
-        // Request the user's location
-        navigator.geolocation.getCurrentPosition(successCallback, fallbackToIPBasedLocation, { timeout: 10000 });
+    if (temperatureElement && temperatureElement1) {
+        temperatureElement.innerText = `${temperature}°C`;
+        temperatureElement1.innerText = `${temperature}°`;
     } else {
-        // Browser doesn't support Geolocation
-        fallbackToIPBasedLocation();
+        console.error('Temperature elements not found.');
+    }
+}
+
+// Function to send city to backend
+async function sendCityToBackend(city) {
+    try {
+        const response = await fetch('/weather', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ city }),
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+        }
+
+        // Handle the response as needed
+        const data = await response.json();
+        console.log(data);
+
+        // Handle the city data
+        handleCityData(data);
+    } catch (error) {
+        console.error(`Error sending city to the backend: ${error}`);
+    }
+}
+
+
+
+
+// Function to handle city data received from the backend
+function handleCityData(data) {
+    const city = data.city;
+    const sunriseTime = data.sunrise_time;
+    const sunsetTime = data.sunset_time;
+    const minTemperature = data.min_temperature;
+    const maxTemperature = data.max_temperature;
+    const windSpeed = data.wind_speed;
+    const humidity = data.humidity;
+    const temperature = data.temperature;
+    const description = data.description;
+
+    // Update the location name element with the received city
+    updateLocationName(city);
+
+    // Update the sunrise and sunset time elements
+    updateSunriseAndSunsetTime(sunriseTime, sunsetTime);
+
+    // Update the temperature elements with the received values
+    updateTemperature(temperature);
+
+    // Update the min and max temperature elements
+    updateMinAndMaxTemperature(minTemperature, maxTemperature);
+
+    // Update the wind speed and humidity elements
+    updateWindSpeedAndHumidity(windSpeed, humidity);
+
+    updateDescription(description);
+
+    console.log("Description received:", description); //fuck i dont know why it doesnt work
+
+        // Check if the description is "snow", "clear", or "clouds"
+        if (['snow', 'clear', 'clouds'].includes(description.toLowerCase())) {
+        // Removes the rain background if the weather is not raining
+        const gifContainer = document.querySelector('.gif-container');
+        if (gifContainer) {
+            gifContainer.remove();
+        }
     }
 
-    // Success callback function for Geolocation API
-    function successCallback(position) {
-        const latitude = position.coords.latitude.toFixed(2);
-        const longitude = position.coords.longitude.toFixed(2);
 
-        // Use OpenCage Geocoding API to get location information based on coordinates
-        fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${openCageApiKey}`)
-            .then(response => response.json())
-            .then(data => {
-                const city = data.results[0].components.city;
-                console.log(`Current City: ${city}`);
-            })
-            .catch(error => {
-                console.log('Error fetching location:', error);
-                console.log('Unable to determine city.');
-            });
+}
+
+// Function to update sunrise and sunset time in the DOM
+function updateSunriseAndSunsetTime(sunriseTime, sunsetTime) {
+    const sunriseElement = document.getElementById('sunriseTime');
+    const sunsetElement = document.getElementById('sunsetTime');
+
+    if (sunriseElement && sunsetElement) {
+        sunriseElement.innerText = `${sunriseTime}`;
+        sunsetElement.innerText = `${sunsetTime}`;
+    } else {
+        console.error('Sunrise and sunset time elements not found.');
+    }
+}
+
+
+// Function to update location name in the DOM
+function updateLocationName(city) {
+    const locationElement = document.getElementById('location-name');
+    const locationElement1 = document.getElementById('location-name1');
+
+    if (locationElement && locationElement1) {
+        locationElement.innerText = city;
+        locationElement1.innerText = city; // Update location-name1 as well
+    } else {
+        console.error('Location name elements not found.');
+    }
+}
+
+
+
+// Function to update min and max temperature in the DOM
+function updateMinAndMaxTemperature(minTemperature, maxTemperature) {
+    const minTempElement = document.getElementById('lowTemp');
+    const maxTempElement = document.getElementById('highTemp');
+
+    if (minTempElement && maxTempElement) {
+        minTempElement.innerText = `Min: ${minTemperature}°`;
+        maxTempElement.innerText = `Max: ${maxTemperature}°`;
+    } else {
+        console.error('Min and max temperature elements not found.');
+    }
+}
+
+// Function to update wind speed and humidity in the DOM
+function updateWindSpeedAndHumidity(windSpeed, humidity) {
+    const windSpeedElement = document.getElementById('windSpeed');
+    const humidityElement = document.getElementById('humidity');
+
+    if (windSpeedElement && humidityElement) {
+        windSpeedElement.innerText = `Wind: ${windSpeed}kph`;
+        humidityElement.innerText = `Humidity: ${humidity}%`;
+    } else {
+        console.error('Wind speed and humidity elements not found.');
+    }
+}
+
+// Usage example
+const city = 'San Jose del Monte';
+sendCityToBackend(city);
+
+// Declare nightFlag as a global variable
+let nightFlag = 0;
+
+function updateBackgroundBasedOnTime() {
+    const currentHour = new Date().getHours();
+    const nightStart = 18; // 6 PM
+    const nightEnd = 6; // 6 AM
+    const bodyElement = document.querySelector('body');
+    const divBgElement = document.querySelector('.divBg');
+
+    if (currentHour >= nightStart || currentHour < nightEnd) {
+        bodyElement.style.backgroundColor = 'rgb(10, 64, 114)';
+        divBgElement.style.background = 'linear-gradient(187deg, #002444 16.39%, rgb(1, 31, 61) 30.77%, rgba(0, 30, 55, 0.829) 56.14%, rgba(14, 63, 108, 0.811) 85.83%, rgb(10, 64, 114) 100%)';
+        // Set nightFlag to 1 when it's night
+        nightFlag = 1;
+    } else {
+        bodyElement.style.backgroundColor = ''; // replace with original color
+        divBgElement.style.background = ''; // replace with original gradient
+        // Reset nightFlag to 0 when it's not night
+        nightFlag = 0;
+    }
+}
+
+// Call the function immediately, and then every hour
+updateBackgroundBasedOnTime();
+setInterval(updateBackgroundBasedOnTime, 60 * 60 * 1000);
+
+function updateDescription(description) { //description is literally on the json read it!!!
+    // Check if description is a string
+    if (typeof description !== 'string') {
+        console.error('Invalid description:', description);
+        return;
     }
 
-    // Fallback to IP-based location
-    function fallbackToIPBasedLocation() {
-        // Use an IP geolocation service (e.g., IPinfo.io)
-        fetch('https://ipinfo.io/json')
-            .then(response => response.json())
-            .then(data => {
-                const city = data.city;
-                console.log(`IP-based City: ${city}`);
-            })
-            .catch(error => {
-                console.log('Error fetching IP-based location:', error);
-                console.log('Unable to determine city.');
-            });
+    const descElement = document.getElementById('desc');
+    const iconElement1 = document.getElementById('weatherIcon1');
+    const iconElement2 = document.getElementById('weatherIcon2');
+
+    // Check if the description contains the word "clouds"
+    if (description.toLowerCase().includes('clouds') && nightFlag == 0) {
+        // If yes, update the image source to cloudy.svg for both icons
+        iconElement1.data = '/static/cloudy.svg';
+        iconElement2.data = '/static/cloudy.svg';
+    } 
+    
+    else if (description.toLowerCase().includes('snow') && nightFlag == 0) {
+        // If yes, update the image source to cloudy.svg for both icons
+        iconElement1.data = '/static/sleet.svg';
+        iconElement2.data = '/static/sleet.svg';
+    } 
+
+    else if (description.toLowerCase().includes('clear') && nightFlag == 0) {
+        // If yes, update the image source to cloudy.svg for both icons
+        iconElement1.data = '/static/sunny.svg';
+        iconElement2.data = '/static/sunny.svg';
+    } 
+    
+    else if (description.toLowerCase().includes('clear') && nightFlag == 1) {
+        // If yes, update the image source to cloudy.svg for both icons
+        iconElement1.data = '/static/clearNight.svg';
+        iconElement2.data = '/static/clearNight.svg';
     }
+
+    else if (description.toLowerCase().includes('clouds') && nightFlag == 1) {
+        // If yes, update the image source to cloudy.svg for both icons
+        iconElement1.data = '/static/partlyCloudyNight.svg';
+        iconElement2.data = '/static/partlyCloudyNight.svg';
+    } 
+
+    else {
+        // Otherwise, keep the original id and image sources
+        iconElement1.data = '/static/thunderstorm_Icon.svg';
+        iconElement2.data = '/static/thunderstorm_Icon.svg';
+    }
+
+
+
+
+}
+
+
+
+
+
+
     </script>
     
 
