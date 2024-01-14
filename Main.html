@@ -8,8 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
-
-    <!-- Custom CSS -->
 <style>
         body {
             margin: 0;
@@ -53,13 +51,13 @@
             text-align: center;     
         }
 
-        .weather-text {
-            color: #ffffff;
-            font-family: 'Jost', sans-serif;
-            font-size: 30px;
-            font-style: normal;
-            line-height: normal;  
-        }
+     .weather-text {
+        color: #ffffff;
+        font-family: 'Jost', sans-serif;
+        font-size: 30px;
+        font-style: normal;
+       line-height: normal;  
+    }
 
         .divBg {
         background-image: url("rain.gif");
@@ -93,72 +91,70 @@
         background-size: cover;    
     }
 
-.UpArrow {
-  position: absolute; /* Position relative to the viewport (screen) */
-  bottom: -8vh;     /* Position the bottom edge at the vertical center */
-  left: 50%;       /* Position the left edge at the horizontal center */
-  transform: translate(-50%, -50%); /* Center both horizontally and vertically */
-  transition: opacity 0.5s ease;
-  padding-top: 10vh;
-  opacity: 1;
-}
+    .UpArrow {
+         position: absolute; /* Position relative to the viewport (screen) */
+         bottom: -8vh;     /* Position the bottom edge at the vertical center */
+        left: 50%;       /* Position the left edge at the horizontal center */
+          transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+          transition: opacity 0.5s ease;
+          padding-top: 10vh;
+          opacity: 1;
+    }
 
-section{
-    display: grid;
-    place-items: center;
-    align-content: center;
-    max-height: 40vh;
-}
+    section{
+            display: grid;
+            place-items: center;
+            align-content: center;
+            max-height: 40vh;
+    }
 
-.hidden {
-    opacity: 0;
-    transition: all 1s !important;
-}
+    .hidden {
+            opacity: 0;
+            transition: all 1s !important;
+    }
 
-.show {
-    opacity: 1;
-    transition: all 1s !important;
-}
+    .show {
+           opacity: 1;
+           transition: all 1s !important;
+    }
 
-.spacer {
-    margin-top: 50px;
-}
+    .spacer {
+           margin-top: 50px;
+    }
 
-.weatherStatus{
-        margin-right: 80%;
-        width: 50px;
-        height: 20px;
-        position: absolute;
-        opacity: 0;
+    .weatherStatus{
+            margin-right: 80%;
+            width: 50px;
+            height: 20px;
+           position: absolute;
+            opacity: 0;
 
-}
+    }
+    .weatherMenu {
+            margin: 0 auto;
+           border-spacing: 20px;
+    }
 
-.weatherMenu {
-        margin: 0 auto;
-        border-spacing: 20px;
-        }
+    .weatherMenu td {
+            color: #ffffff;
+            font-family: 'Jost', sans-serif;
+            font-style: normal;
+            line-height: normal;
+            text-align: justify;  
+    }
 
-.weatherMenu td {
-    color: #ffffff;
-        font-family: 'Jost', sans-serif;
-        font-style: normal;
-        line-height: normal;
-        text-align: justify;  
-        }
+    .weatherMenu img {
+            display: block;
+            margin: 0 auto;
+    }
 
-.weatherMenu img {
-        display: block;
-        margin: 0 auto;
-        }
-
-#location-name1 {
-    color: #ffffff;
-    font-size: 25px;
-    font-family: 'Jost', sans-serif;
-    font-style: normal;
-    line-height: normal;
-    text-align: justify;  
-
+    #location-name1 {
+            color: #ffffff;
+            font-size: 25px;
+            font-family: 'Jost', sans-serif;
+            font-style: normal;
+            line-height: normal;
+            text-align: justify;  
 }
 </style>
 </head>
@@ -169,7 +165,7 @@ section{
             <img src="rain.gif" alt="Rain GIF">
         </div>
    
-        <section class="hidden">
+    <section class="hidden">
         <div class="weather-box">
             <table border="0px">
                 <tr>
@@ -178,15 +174,14 @@ section{
                         <img src="fallback-image.png" alt="Fallback image">
                       </object>
                     </td>
-                    <td id="temp1" class="weather-text" style="font-size: 75px;">32°</td>
-                    
+                    <td id="temp1" class="weather-text" style="font-size: 75px;">32°</td> 
                 </tr>
                 <tr>
                     <td id="location-name" class="weather-text" colspan="2">Location Error</td>
                 </tr>
             </table>         
         </div>
-        </section>
+       </section>
 
 <section class="hidden">
     <div class="weatherStatus hidden">
@@ -198,16 +193,13 @@ section{
                 <img src="fallback-image.png" alt="Fallback image">
                 </object>
             </td>
-                <td id="temp" class="weather-text" style="font-size: 50px; margin: 0; min-width: 200px;">30°C</td>
-
-
-
+            <td id="temp" class="weather-text" style="font-size: 50px; margin: 0; min-width: 200px;">30°C</td>
         </tr>
         <tr>
-         <td id="location-name1" style="margin: 0;text-align: left; opacity: 1;">Location Error</td>
+             <td id="location-name1" style="margin: 0;text-align: left; opacity: 1;">Location Error</td>
         </tr>
     </table>     
-        </div>
+    </div>
 
 
  <div class="InfoMenu">
@@ -270,8 +262,7 @@ section{
             </svg>
         </div>
 
-        <table class="weatherMenu" style="opacity: 0;">
-    
+<table class="weatherMenu" style="opacity: 0;">   
             <tr>
               <td><img src="static/sunrise.png"></td>
               <td><img src="static/sunset.png"></td>
@@ -297,13 +288,10 @@ section{
                 <td id="humidity">Humid: 30%</td>
               </tr>
     </table>
- 
- 
     </div>
 </section>
 
-    
-    <script>
+<script>
         const observer = new IntersectionObserver((entries) => {
             let isArrowVisible = false;
             let isWeatherBoxVisible = false;
@@ -317,8 +305,6 @@ section{
                     isWeatherBoxVisible = true;
                 }
             });
-    
-    
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('show');
@@ -348,10 +334,11 @@ window.addEventListener('scroll', () => {
         hiddenElements.forEach((el) => observer.observe(el));
 
 // Declare city as a global variable
+
 /*
 let city = '';
 console.log(city);
-const openCageApiKey = '53508de8c8aa43caa6cfaa09d8ed9240';
+const openCageApiKey = 'c50db7640d3f49e89e76e7effb65fe5d';
 
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(successCallback, fallbackToIPBasedLocation, { timeout: 10000 });
@@ -378,7 +365,6 @@ function successCallback(position) {
         });
 }
 */
-
 
 let city = '';
 console.log(city);
@@ -413,7 +399,6 @@ function successCallback(position) {
             console.log('Unable to determine city.');
         });
 }
-
 
 
 function fallbackToIPBasedLocation() {
@@ -469,9 +454,6 @@ async function sendCityToBackend(city) {
     }
 }
 
-
-
-
 // Function to handle city data received from the backend
 function handleCityData(data) {
     const city = data.city;
@@ -486,24 +468,17 @@ function handleCityData(data) {
 
     // Update the location name element with the received city
     updateLocationName(city);
-
     // Update the sunrise and sunset time elements
     updateSunriseAndSunsetTime(sunriseTime, sunsetTime);
-
     // Update the temperature elements with the received values
     updateTemperature(temperature);
-
     // Update the min and max temperature elements
     updateMinAndMaxTemperature(minTemperature, maxTemperature);
-
     // Update the wind speed and humidity elements
     updateWindSpeedAndHumidity(windSpeed, humidity);
-
     updateDescription(description);
-
-    console.log("Description received:", description); //fuck i dont know why it doesnt work
-
-        // Check if the description is "snow", "clear", or "clouds"
+    console.log("Description received:", description); 
+    // Check if the description is "snow", "clear", or "clouds"
         if (['snow', 'clear', 'clouds'].includes(description.toLowerCase())) {
         // If it is, find the gif container and remove it
         const gifContainer = document.querySelector('.gifContainer');
@@ -526,8 +501,6 @@ function updateSunriseAndSunsetTime(sunriseTime, sunsetTime) {
         console.error('Sunrise and sunset time elements not found.');
     }
 }
-
-
 // Function to update location name in the DOM
 function updateLocationName(city) {
     const locationElement = document.getElementById('location-name');
@@ -541,8 +514,6 @@ function updateLocationName(city) {
     }
 }
 
-
-
 // Function to update min and max temperature in the DOM
 function updateMinAndMaxTemperature(minTemperature, maxTemperature) {
     const minTempElement = document.getElementById('lowTemp');
@@ -555,7 +526,6 @@ function updateMinAndMaxTemperature(minTemperature, maxTemperature) {
         console.error('Min and max temperature elements not found.');
     }
 }
-
 // Function to update wind speed and humidity in the DOM
 function updateWindSpeedAndHumidity(windSpeed, humidity) {
     const windSpeedElement = document.getElementById('windSpeed');
@@ -569,8 +539,38 @@ function updateWindSpeedAndHumidity(windSpeed, humidity) {
     }
 }
 
-// Usage example
 sendCityToBackend(city);
+
+let nightFlag = 0;
+    function updateBackgroundBasedOnTime() { //This is measier than my life damn
+    // Get the current hour
+    const currentHour = new Date().getHours();
+    // Define the start and end of the "night" period
+    const nightStart = 18; // 6 PM
+    const nightEnd = 6; // 6 AM
+    // Get the body and divBg elements
+    const bodyElement = document.querySelector('body');
+    const divBgElement = document.querySelector('.divBg');
+
+    // If it's night time...
+    if (currentHour >= nightStart || currentHour < nightEnd) {
+        // Change the body background color
+        bodyElement.style.backgroundColor = 'rgb(10, 64, 114)';
+        nightFlag = 1;
+        // Change the divBg background
+        divBgElement.style.background = 'linear-gradient(187deg, #002444 16.39%, rgb(1, 31, 61) 30.77%, rgba(0, 30, 55, 0.829) 56.14%, rgba(14, 63, 108, 0.811) 85.83%, rgb(10, 64, 114) 100%)';
+    } else {
+        // Otherwise, reset the backgrounds to their original values
+        bodyElement.style.backgroundColor = ''; // replace with original color
+        divBgElement.style.background = ''; // replace with original gradient
+        nightFlag = 0;
+    }
+}
+
+// Call the function immediately, and then every hour
+updateBackgroundBasedOnTime();
+setInterval(updateBackgroundBasedOnTime, 60 * 60 * 1000);
+
 
 function updateDescription(description) { //description is literally on the json read it!!!
     // Check if description is a string
@@ -584,63 +584,40 @@ function updateDescription(description) { //description is literally on the json
     const iconElement2 = document.getElementById('weatherIcon2');
 
     // Check if the description contains the word "clouds"
-    if (description.toLowerCase().includes('clouds')) {
+    if (description.toLowerCase().includes('clouds') && nightFlag == 0) {
         // If yes, update the image source to cloudy.svg for both icons
         iconElement1.data = '/static/cloudy.svg';
         iconElement2.data = '/static/cloudy.svg';
     } 
     
-    else if (description.toLowerCase().includes('snow')) {
+    else if (description.toLowerCase().includes('snow') && nightFlag == 0) {
         // If yes, update the image source to cloudy.svg for both icons
         iconElement1.data = '/static/snow.svg';
         iconElement2.data = '/static/snow.svg';
     } 
-    
+
+    else if (description.toLowerCase().includes('clear') && nightFlag == 1) {
+        // If yes, update the image source to cloudy.svg for both icons
+        iconElement1.data = 'static/clearNight.svg';
+        iconElement2.data = 'static/clearNight.svg';
+    } 
+
+    else if (description.toLowerCase().includes('clouds') && nightFlag == 1) {
+        // If yes, update the image source to cloudy.svg for both icons
+        iconElement1.data = 'static/partlyCloudyNight.svg';
+        iconElement2.data = 'static/partlyCloudyNight.svg';
+    } 
+        
     else {
         // Otherwise, keep the original id and image sources
         iconElement1.data = '/static/thunderstorm_Icon.svg';
         iconElement2.data = '/static/thunderstorm_Icon.svg';
     }
 
-
-
-    function updateBackgroundBasedOnTime() { //This is measier than my life damn
-    // Get the current hour
-    const currentHour = new Date().getHours();
-
-    // Define the start and end of the "night" period
-    const nightStart = 18; // 6 PM
-    const nightEnd = 6; // 6 AM
-
-    // Get the body and divBg elements
-    const bodyElement = document.querySelector('body');
-    const divBgElement = document.querySelector('.divBg');
-
-    // If it's night time...
-    if (currentHour >= nightStart || currentHour < nightEnd) {
-        // Change the body background color
-        bodyElement.style.backgroundColor = 'rgb(10, 64, 114)';
-
-        // Change the divBg background
-        divBgElement.style.background = 'linear-gradient(187deg, #002444 16.39%, rgb(1, 31, 61) 30.77%, rgba(0, 30, 55, 0.829) 56.14%, rgba(14, 63, 108, 0.811) 85.83%, rgb(10, 64, 114) 100%)';
-    } else {
-        // Otherwise, reset the backgrounds to their original values
-        bodyElement.style.backgroundColor = ''; // replace with original color
-        divBgElement.style.background = ''; // replace with original gradient
-    }
-}
-
-// Call the function immediately, and then every hour
-updateBackgroundBasedOnTime();
-setInterval(updateBackgroundBasedOnTime, 60 * 60 * 1000);
 }
 
 
-
-
-
-
-    </script>
+</script>
     
 
     <!-- Bootstrap JS and Popper.js (optional) -->
