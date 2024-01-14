@@ -41,7 +41,7 @@ async def read_cloudy_svg():
         file_path = Path("static/sleet.svg")
         return FileResponse(file_path, media_type="image/svg+xml")
     except FileNotFoundError:
-        return {"message": "Cloudy SVG not found"}
+        return {"message": "Sleet SVG not found"}
 
 @app.get("/static/sunny.svg", response_class=FileResponse)
 async def read_cloudy_svg():
@@ -49,7 +49,7 @@ async def read_cloudy_svg():
         file_path = Path("static/sunny.svg")
         return FileResponse(file_path, media_type="image/svg+xml")
     except FileNotFoundError:
-        return {"message": "Cloudy SVG not found"}
+        return {"message": "Sunny SVG not found"}
     
 @app.get("/static/clearNight.svg", response_class=FileResponse)
 async def read_cloudy_svg():
@@ -57,7 +57,7 @@ async def read_cloudy_svg():
         file_path = Path("static/clearNight.svg")
         return FileResponse(file_path, media_type="image/svg+xml")
     except FileNotFoundError:
-        return {"message": "Cloudy SVG not found"}
+        return {"message": "ClearNight SVG not found"}
     
 @app.get("/static/partlyCloudyNight.svg", response_class=FileResponse)
 async def read_cloudy_svg():
@@ -65,7 +65,7 @@ async def read_cloudy_svg():
         file_path = Path("static/partlyCloudyNight.svg")
         return FileResponse(file_path, media_type="image/svg+xml")
     except FileNotFoundError:
-        return {"message": "Cloudy SVG not found"}
+        return {"message": "CloudyNight SVG not found"}
 
 @app.get("/static/thunderstorm_Icon.svg", response_class=FileResponse)
 async def read_cloudy_svg():
@@ -73,7 +73,7 @@ async def read_cloudy_svg():
         file_path = Path("static/thunderstorm_Icon.svg")
         return FileResponse(file_path, media_type="image/svg+xml")
     except FileNotFoundError:
-        return {"message": "Cloudy SVG not found"}
+        return {"message": "thunderstorm SVG not found"}
     
 
 #End of Serving weather icons
@@ -86,7 +86,7 @@ async def read_cloudy_page():
         file_path = Path("static/thunderstorm.html")
         return HTMLResponse(content=file_path.read_text())
     except FileNotFoundError:
-        return {"message": "Cloudy page not found"}
+        return {"message": "page not found"}
 
 # Route to serve the static image "rain.gif"
 @app.get("/rain.gif", response_class=HTMLResponse)
@@ -96,6 +96,8 @@ async def read_rain_gif():
         return HTMLResponse(content=file_path.read_bytes())
     except FileNotFoundError:
         return {"message": "Rain GIF not found"}
+
+
 
 @app.post("/weather", response_class=JSONResponse)
 async def get_weather(city_request: CityRequest):
